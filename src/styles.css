@@ -183,5 +183,80 @@
   /* text-shine disabled — class kept as no-op to avoid breaking existing markup */
   .text-shine {}
 
+  /* Premium nav link underline */
+  .nav-link {
+    position: relative;
+    padding: 0.25rem 0;
+    transition: color 0.35s ease;
+  }
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%; bottom: -6px;
+    width: 0; height: 1.5px;
+    background: var(--gradient-luxe);
+    border-radius: 2px;
+    transition: width 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), left 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .nav-link:hover::after,
+  .nav-link:focus-visible::after {
+    width: 100%;
+    left: 0;
+  }
 
+  /* Glassy header surface */
+  .glass-header {
+    background: color-mix(in oklab, var(--background) 70%, transparent);
+    backdrop-filter: saturate(160%) blur(18px);
+    -webkit-backdrop-filter: saturate(160%) blur(18px);
+    border-bottom: 1px solid color-mix(in oklab, var(--primary) 12%, transparent);
+    box-shadow: 0 8px 30px -18px oklch(0.4 0.05 340 / 0.25);
+  }
+
+  /* Premium CTA button */
+  .btn-luxe {
+    position: relative;
+    background: var(--gradient-luxe);
+    color: var(--primary-foreground);
+    border-radius: 9999px;
+    box-shadow: 0 10px 24px -10px oklch(0.62 0.24 350 / 0.55),
+                inset 0 1px 0 rgba(255,255,255,0.25);
+    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+                box-shadow 0.35s ease, filter 0.35s ease;
+  }
+  .btn-luxe:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.05);
+    box-shadow: 0 18px 40px -12px oklch(0.62 0.24 350 / 0.65),
+                0 0 0 4px oklch(0.62 0.24 350 / 0.08),
+                inset 0 1px 0 rgba(255,255,255,0.3);
+  }
+  .btn-luxe:active { transform: translateY(0); }
+
+  /* Hamburger animation */
+  .hamburger { width: 24px; height: 18px; position: relative; }
+  .hamburger span {
+    position: absolute; left: 0; height: 2px; width: 100%;
+    background: currentColor; border-radius: 2px;
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+                opacity 0.25s ease, top 0.3s ease;
+  }
+  .hamburger span:nth-child(1) { top: 0; }
+  .hamburger span:nth-child(2) { top: 8px; width: 75%; }
+  .hamburger span:nth-child(3) { top: 16px; }
+  .hamburger.open span:nth-child(1) { top: 8px; transform: rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; transform: translateX(-10px); }
+  .hamburger.open span:nth-child(3) { top: 8px; transform: rotate(-45deg); }
+
+  @keyframes mobile-menu-in {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .mobile-menu { animation: mobile-menu-in 0.35s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+
+  @keyframes mobile-link-in {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .mobile-link { animation: mobile-link-in 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
 }
