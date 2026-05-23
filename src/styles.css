@@ -180,7 +180,7 @@
     transform-origin: left;
   }
 
-  /* text-shine intentionally disabled — gold shimmer reduced readability */
-  .text-shine { background-image: none; }
-  .text-shine:hover { background-image: none; filter: none; }
+  /* text-shine intentionally disabled — no-op so it doesn't override .text-gradient */
+  .text-shine, .text-shine:hover { background-image: inherit; filter: none; }
+
 }
