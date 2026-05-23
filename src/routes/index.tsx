@@ -115,36 +115,36 @@ function Showcase() {
 
 function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-24">
+    <section id="home" className="relative min-h-[100svh] flex items-center pt-28 sm:pt-24">
       <img
         src={hero}
         alt="Luxury aesthetic clinic interior"
         className="absolute inset-0 w-full h-full object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-background/30" />
-      <div className="absolute -top-20 -right-20 size-96 rounded-full bg-primary/20 blur-3xl float-slow" />
+      <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-background/95 via-background/80 to-background/40 lg:to-background/30" />
+      <div className="absolute -top-20 -right-20 size-72 sm:size-96 rounded-full bg-primary/20 blur-3xl float-slow" />
 
-      <div className="relative max-w-7xl mx-auto px-5 lg:px-8 py-20 grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative max-w-7xl mx-auto px-5 lg:px-8 py-16 sm:py-20 grid lg:grid-cols-2 gap-10 lg:gap-12 items-center w-full">
         <div className="reveal">
-          <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 border border-primary/20 px-4 py-1.5 mb-6">
+          <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 border border-primary/20 px-3 sm:px-4 py-1.5 mb-5 sm:mb-6">
             <Sparkles className="size-4 text-primary" />
-            <span className="text-xs font-semibold tracking-widest text-primary uppercase">Rawalpindi's Premier Skin Clinic</span>
+            <span className="text-[10px] sm:text-xs font-semibold tracking-widest text-primary uppercase">Rawalpindi's Premier Skin Clinic</span>
           </div>
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-semibold leading-[1.05]">
-            Reveal your most <span className="font-script text-gradient text-shine cursor-default text-6xl sm:text-7xl lg:text-8xl">radiant</span> self
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.05]">
+            Reveal your most <span className="font-script text-gradient cursor-default text-5xl sm:text-6xl md:text-7xl lg:text-8xl">radiant</span> self
           </h1>
-          <p className="mt-6 text-lg text-muted-foreground max-w-xl leading-relaxed">
+          <p className="mt-5 sm:mt-6 text-base sm:text-lg text-muted-foreground max-w-xl leading-relaxed">
             Advanced dermatology, laser & aesthetic treatments by FCPS specialist <strong className="text-foreground">Dr Kinza Nasir</strong> — in a serene, luxurious setting designed to transform your skin and your confidence.
           </p>
-          <div className="mt-9 flex flex-wrap gap-4">
-            <a href="#contact" className="shine inline-flex items-center gap-2 gradient-luxe text-primary-foreground px-7 py-4 rounded-full font-semibold hover-glow">
+          <div className="mt-7 sm:mt-9 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+            <a href="#contact" className="shine inline-flex items-center justify-center gap-2 gradient-luxe text-primary-foreground px-6 sm:px-7 py-3.5 sm:py-4 rounded-full font-semibold hover-glow">
               Book Your Consultation <ArrowRight className="size-4" />
             </a>
-            <a href="#services" className="inline-flex items-center gap-2 border-2 border-foreground/15 hover:border-primary hover:text-primary text-foreground px-7 py-4 rounded-full font-semibold transition-all hover:scale-105">
+            <a href="#services" className="inline-flex items-center justify-center gap-2 border-2 border-foreground/15 hover:border-primary hover:text-primary text-foreground px-6 sm:px-7 py-3.5 sm:py-4 rounded-full font-semibold transition-all hover:scale-105">
               Explore Treatments
             </a>
           </div>
-          <div className="mt-10 flex items-center gap-6">
+          <div className="mt-8 sm:mt-10 flex items-center gap-4 sm:gap-6">
             <div className="flex items-center gap-1">
               {[...Array(5)].map((_, i) => <Star key={i} className="size-5 fill-primary text-primary" />)}
             </div>
@@ -166,6 +166,7 @@ function Hero() {
     </section>
   );
 }
+
 
 function About() {
   return (
