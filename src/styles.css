@@ -180,7 +180,8 @@
     transform-origin: left;
   }
 
-  /* text-shine intentionally disabled — no-op so it doesn't override .text-gradient */
-  .text-shine, .text-shine:hover { background-image: inherit; filter: none; }
+  /* text-shine disabled — class kept as no-op to avoid breaking existing markup */
+  .text-shine {}
+
 
 }
