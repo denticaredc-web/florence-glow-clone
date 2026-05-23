@@ -32,16 +32,18 @@ export function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-5 lg:px-8 flex items-center justify-between h-20 lg:h-24">
-        <Link to="/" className="flex items-center gap-3 group">
+      <div className="max-w-7xl mx-auto px-4 sm:px-5 lg:px-8 flex items-center justify-between h-20 lg:h-28">
+        <Link to="/" className="flex items-center gap-3 group shrink-0">
           <img
             src={logo}
             alt="Florence Aesthetics by Dr Kinza Nasir"
             width={1024}
             height={1024}
-            className="h-14 lg:h-16 w-auto object-contain transition-transform duration-500 group-hover:scale-105 drop-shadow-sm"
+            className="h-16 sm:h-20 lg:h-24 w-auto object-contain transition-transform duration-500 group-hover:scale-105 [image-rendering:auto]"
+            style={{ imageRendering: "auto" }}
           />
         </Link>
+
 
         <nav className="hidden lg:flex items-center gap-8">
           {links.map((l) => (
